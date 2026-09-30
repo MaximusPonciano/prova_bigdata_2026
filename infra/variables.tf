@@ -27,3 +27,28 @@ variable "bucket_raw_nome" {
     error_message = "O nome do bucket S3 deve ter entre 3 e 63 caracteres."
   }
 }
+
+variable "bucket_gold_nome" {
+  description = "Nome global único do bucket S3 gold."
+  type        = string
+}
+
+variable "bucket_resultados_nome" {
+  description = "Nome global único do bucket S3 para os resultados do Athena."
+  type        = string
+}
+
+variable "lab_role_arn" {
+  description = "ARN da LabRole do AWS Academy Learner Lab."
+  type        = string
+}
+
+variable "tags" {
+  description = "Tags padronizadas para os recursos AWS."
+  type        = map(string)
+  default = {
+    Projeto    = "ProvaBigData"
+    Disciplina = "EngenhariaDeDados"
+    Ambiente   = "Producao"
+  }
+}

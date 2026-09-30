@@ -43,27 +43,27 @@ Cada item indica o requisito correspondente da prova.
 
 ## 3. Buckets e IAM
 
-- [ ] **Bucket_Gold privado**, com o bloqueio de acesso público habilitado (os quatro
+- [x] **Bucket_Gold privado**, com o bloqueio de acesso público habilitado (os quatro
   bloqueios do `public_access_block` em `true`). — _Requisitos 11.2, 4.5_
-- [ ] **Glue Job usa a LabRole por ARN** (referenciada via `data source` ou variável
+- [x] **Glue Job usa a LabRole por ARN** (referenciada via `data source` ou variável
   `labrole_arn`), **sem** criar roles ou policies IAM próprias. — _Requisito 11.3_
 
 ## 4. Processamento e camada gold
 
 - [ ] **Glue Job executado com sucesso** (disparo via console ou `aws glue start-job-run`,
   com status acompanhado até concluir). — _Requisito 5.3_
-- [ ] **Dados gravados no Bucket_Gold em Parquet particionado por `data_pedido`**
+- [x] **Dados gravados no Bucket_Gold em Parquet particionado por `data_pedido`**
   (layout `fato_pedidos/data_pedido=YYYY-MM-DD/...`). — _Requisitos 6.6, 13.3_
 
 ## 5. Catálogo e consultas
 
-- [ ] **Tabelas registradas no Glue Data Catalog** e consultáveis pelo Athena. — _Requisito 7.4_
+- [x] **Tabelas registradas no Glue Data Catalog** e consultáveis pelo Athena. — _Requisito 7.4_
 - [ ] **As consultas Athena de referência (≥ 3) retornam os resultados esperados**
   definidos no enunciado. — _Requisitos 7.1, 7.2_
 
 ## 6. Metadados no DynamoDB
 
-- [ ] **Item de metadados gravado no DynamoDB** conforme o esquema definido
+- [x] **Item de metadados gravado no DynamoDB** conforme o esquema definido
   (`execution_id`, `data_hora`, `dataset`, `linhas_lidas`, `linhas_gravadas`, `status`). — _Requisito 8.5_
 
 ## 7. Custo, limpeza e boas práticas
