@@ -13,9 +13,9 @@ resource "aws_s3_object" "glue_script" {
 
 # Tabela DynamoDB para Metadados
 resource "aws_dynamodb_table" "metadados" {
-  name           = "BigData_Metadados_Execucao"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "execution_id"
+  name         = "BigData_Metadados_Execucao"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "execution_id"
 
   attribute {
     name = "execution_id"
