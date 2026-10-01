@@ -28,7 +28,7 @@ resource "terraform_data" "bucket_raw" {
 
   provisioner "local-exec" {
     interpreter = ["PowerShell", "-Command"]
-    command = <<-CMD
+    command     = <<-CMD
       aws s3api create-bucket --bucket ${var.bucket_raw_nome} --region ${var.regiao} 2>$null
       aws s3api put-public-access-block --bucket ${var.bucket_raw_nome} --public-access-block-configuration BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true
       aws s3 cp "${path.module}/../dataset/pedidos_desnormalizado.csv" "s3://${var.bucket_raw_nome}/pedidos/pedidos_desnormalizado.csv" --content-type text/csv

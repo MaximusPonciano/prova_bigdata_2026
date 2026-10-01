@@ -23,7 +23,7 @@ resource "terraform_data" "bucket_gold" {
 
   provisioner "local-exec" {
     interpreter = ["PowerShell", "-Command"]
-    command = <<-CMD
+    command     = <<-CMD
       aws s3api create-bucket --bucket ${each.value} --region ${var.regiao} 2>$null
       aws s3api put-public-access-block --bucket ${each.value} --public-access-block-configuration BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true
       aws s3api put-bucket-tagging --bucket ${each.value} --tagging "${local.tagging_shorthand}"
