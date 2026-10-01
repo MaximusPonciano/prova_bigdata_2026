@@ -26,19 +26,19 @@ Cada item indica o requisito correspondente da prova.
 ---
 ## 1. Segurança e credenciais
 
-- [ ] **Credenciais temporárias configuradas e nunca versionadas.** As chaves do Learner Lab
+- [x] **Credenciais temporárias configuradas e nunca versionadas.** As chaves do Learner Lab
   (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`) foram configuradas via
   variáveis de ambiente ou `~/.aws/credentials` e **não** aparecem em nenhum arquivo commitado
   (confira o `.gitignore`). — _Requisito 11.4_
-- [ ] **Nenhuma credencial ou `terraform.tfvars` com segredo foi commitada.** Apenas os arquivos
+- [x] **Nenhuma credencial ou `terraform.tfvars` com segredo foi commitada.** Apenas os arquivos
   `*.tfvars.example` (sem valores sensíveis) estão versionados. — _Requisito 11.4_
 
 ## 2. Região e aplicação da infraestrutura
 
-- [ ] **Região `us-east-1` em todos os providers**, conforme exigido pelo
+- [x] **Região `us-east-1` em todos os providers**, conforme exigido pelo
   Learner Lab. — _Requisito 10.2_
-- [ ] **AWS CLI v2 instalado e autenticado** (os buckets são criados via CLI no apply). — _Requisito 10.2_
-- [ ] **A infraestrutura (`terraform apply` em `infra/`) aplica sem erro** (`terraform init`,
+- [x] **AWS CLI v2 instalado e autenticado** (os buckets são criados via CLI no apply). — _Requisito 10.2_
+- [x] **A infraestrutura (`terraform apply` em `infra/`) aplica sem erro** (`terraform init`,
   `terraform validate` e `terraform apply` concluem sem falhas). — _Requisito 13.1_
 
 ## 3. Buckets e IAM
@@ -50,7 +50,7 @@ Cada item indica o requisito correspondente da prova.
 
 ## 4. Processamento e camada gold
 
-- [ ] **Glue Job executado com sucesso** (disparo via console ou `aws glue start-job-run`,
+- [x] **Glue Job executado com sucesso** (disparo via console ou `aws glue start-job-run`,
   com status acompanhado até concluir). — _Requisito 5.3_
 - [x] **Dados gravados no Bucket_Gold em Parquet particionado por `data_pedido`**
   (layout `fato_pedidos/data_pedido=YYYY-MM-DD/...`). — _Requisitos 6.6, 13.3_
@@ -58,7 +58,7 @@ Cada item indica o requisito correspondente da prova.
 ## 5. Catálogo e consultas
 
 - [x] **Tabelas registradas no Glue Data Catalog** e consultáveis pelo Athena. — _Requisito 7.4_
-- [ ] **As consultas Athena de referência (≥ 3) retornam os resultados esperados**
+- [x] **As consultas Athena de referência (≥ 3) retornam os resultados esperados**
   definidos no enunciado. — _Requisitos 7.1, 7.2_
 
 ## 6. Metadados no DynamoDB
@@ -68,16 +68,16 @@ Cada item indica o requisito correspondente da prova.
 
 ## 7. Custo, limpeza e boas práticas
 
-- [ ] **Tags de custo padronizadas** (`Projeto`, `Disciplina`, `Ambiente`) aplicadas a todos
+- [x] **Tags de custo padronizadas** (`Projeto`, `Disciplina`, `Ambiente`) aplicadas a todos
   os recursos criados. — _Requisito 10.3_
-- [ ] **`terraform destroy` executado ao final** para remover todos os recursos e evitar
+- [x] **`terraform destroy` executado ao final** para remover todos os recursos e evitar
   consumo residual do orçamento (guarde a evidência da destruição). — _Requisitos 10.4, 10.6_
 
 ## 8. Entrega (fork, branch e PR)
 
-- [ ] **Fork** do repositório da prova criado na sua conta. — _Requisito 12.1_
-- [ ] **Branch no padrão `prova-SEURA`** criada a partir do seu fork. — _Requisito 12.3_
-- [ ] **Arquivos do aluno em `entregas/<RA>/`** (uma pasta identificada pelo seu RA na raiz
+- [x] **Fork** do repositório da prova criado na sua conta. — _Requisito 12.1_
+- [x] **Branch no padrão `prova-SEURA`** criada a partir do seu fork. — _Requisito 12.3_
+- [x] **Arquivos do aluno em `entregas/<RA>/`** (uma pasta identificada pelo seu RA na raiz
   do repositório). — _Requisito 12.5_
-- [ ] **Pull Request aberta** para a `master` do repositório original, com os entregáveis e as
+- [x] **Pull Request aberta** para a `master` do repositório original, com os entregáveis e as
   evidências de execução (prints do `terraform apply` e das consultas Athena). — _Requisitos 12.1, 12.2_
